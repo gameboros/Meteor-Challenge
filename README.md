@@ -4,6 +4,7 @@ EXPLANATION:
 To do the first three tasks, I developed the following strategy:
 
 First I opened the image and saved all the pixel values(returns RGBA values), image height and width in variables.
+
 Task 1 & 2: I traversed the pixels array, checking for pure white or pure red RGBA values. If it was white, I'd add it to a Stars counter. If it was red, I’d add it to a Meteor counter. Then returned the values.
 
 Task 3:  The strategy for Task 3 was identify the water level, then save all x(width) values of the water level pixels. Then, I saved all width values for meteors inside the same loop used for Task 2. As the last step, I intersected water level pixels width values with meteor width values, which resulted in meteors widths that were perpendicular to water pixels, and counted the list for the final value of meteors.
