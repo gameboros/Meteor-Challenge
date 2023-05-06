@@ -1,17 +1,10 @@
 from PIL import Image
+from message import count_dots
+import modules
 
-# valores rgb das cores a serem analisadas
 RED = (255, 0, 0, 255)
 WHITE = (255, 255, 255, 255)
 WATER_BLUE = (0, 0, 255, 255)
-
-# funcao que itera sob os pixels e soma nos respectivos contadores
-def open_image(image_path):
-    with Image.open(image_path) as image:
-        pixels = image.load()
-        width, height = image.size
-    return pixels, width, height
-
 
 def count_pixels(image_path):
     meteors = 0
@@ -19,7 +12,7 @@ def count_pixels(image_path):
     water_level = float('inf')
     water_width = set()
     meteor_widths = set()
-    pixels, width, height = open_image(image_path)
+    pixels, width, height = modules.open_image(image_path)
     
     for y in range(height):
         for x in range(width):
@@ -40,9 +33,7 @@ def count_pixels(image_path):
 
 
 meteors, stars, meteorWidths = count_pixels("meteor_challenge_01.png")
-print(f"Number of red pixels: {meteors}\n Number of white pixels: {stars}\n Meteors landing on water: {meteorWidths}")
-
-# 255 255 255 255 branco
-# 255 0 0 255 vermelho
-# 0 0 0 255 preto
-# 0 0 255 255 azul agua
+second_part, first_part= (count_dots("meteor_challenge_01.png"))
+print(f"Number of meteors: {meteors}\nNumber of stars: {stars}\nMeteors landing on water: {meteorWidths}")
+print("=============================")
+print(first_part + second_part)
