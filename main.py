@@ -31,9 +31,9 @@ def count_pixels(image_path):
     meteor_widths = len(meteor_widths.intersection(water_width))
     return meteors, stars, meteor_widths
 
-
+#chamando  funcoes principais e printando resultados
 meteors, stars, meteorWidths = count_pixels("meteor_challenge_01.png")
 second_part, first_part= (count_dots("meteor_challenge_01.png"))
 print(f"Number of meteors: {meteors}\nNumber of stars: {stars}\nMeteors landing on water: {meteorWidths}")
 print("=============================")
-print(first_part + second_part)
+print("Hidden Message: " + first_part + second_part)
